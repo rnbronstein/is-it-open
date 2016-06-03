@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+grotto = Venue.create(google_place_id: "ChIJHQm1tBZawokR3BA9MGGbtjQ")
+blarney = Venue.create(google_place_id: "ChIJWUf6PBFawokRifmCHSgp17w")
+shivum = Venue.create(google_place_id: "ChIJu6dYXBFawokRqJY0A_H61WQ")
+el_toro = Venue.create(google_place_id: "ChIJ8wEMtBZawokR2Ggjyq7F2R0")
+fresh_and_co = Venue.create(google_place_id: "ChIJ5T8HSRFawokRvNi-9oXxths")
+crj = Venue.create(google_place_id: "ChIJib3BYBFawokRHvgyzIFlfXk")
