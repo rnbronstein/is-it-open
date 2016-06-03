@@ -1,13 +1,24 @@
 require "rails_helper"
 
 RSpec.describe Venue, type: :model do
-  it "has a name." do
-    spock = Author.create(status: "Admin")
-    expect(spock.valid?).to be_falsy
+  context "Invalid venue" do
+    it "is invalid without a place ID." do
+      joes = Venue.create()
+      expect(joes.valid?).to be_falsy
+    end
   end
 
-  it "has a status." do
-    spock = Author.create(name: "Spock", status: "Admin")
-    expect(spock.status).to be_truthy
+  context "Valid venue" do
+    before(:each) do
+      @stir_cafe = Venue.create(google_place_id: "ChIJS3rqSBFawokRLT_XRbu-8r8")
+    end
+
+    it "has a place ID." do
+      expect(@stir_cafe.google_place_id).to be_truthy
+    end
+
+    it "has a valid place ID." do
+      expect(@stir_cafe.google_place_id.length).to eq(27)
+    end
   end
 end
