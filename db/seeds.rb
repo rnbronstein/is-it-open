@@ -12,3 +12,7 @@ shivum = Venue.create(google_place_id: "ChIJu6dYXBFawokRqJY0A_H61WQ")
 el_toro = Venue.create(google_place_id: "ChIJ8wEMtBZawokR2Ggjyq7F2R0")
 fresh_and_co = Venue.create(google_place_id: "ChIJ5T8HSRFawokRvNi-9oXxths")
 crj = Venue.create(google_place_id: "ChIJib3BYBFawokRHvgyzIFlfXk")
+
+bento = Venue.create(google_place_id: "ChIJRV992hlawokRp6SxCF0RAd4")
+cafe_plaza = Venue.create(google_place_id: "ChIJA-9IYBFawokReA7UZ9NLoeU")
+daylight_donuts = Venue.create(google_place_id: "ChIJ8aX5YRFawokRGouBuub9atE")
