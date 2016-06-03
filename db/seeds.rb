@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+sophies = Venue.create(google_place_id: "ChIJAWqtshZawokRpoLRfZ9B0y4")
+subway = Venue.create(google_place_id: "ChIJFdlGXhFawokR7lPqXwaGirc")
+cafe_11 = Venue.create(google_place_id: "ChIJ0XYmYhFawokRF4L2czb2yK0")
