@@ -33,9 +33,8 @@ gem 'figaro'
 
 gem 'pg'
 
-gem 'simplecov', :require => false, :group => :test
-
 group :development, :test do
+  gem 'simplecov', require: false
   gem 'byebug'
   gem 'rspec-rails'
   gem 'rubocop'

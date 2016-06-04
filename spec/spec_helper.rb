@@ -1,9 +1,10 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
+require 'capybara/rspec'
+
 RSpec.configure do |config|
-
-  require 'capybara/rspec'
-  require 'simplecov'
-
-  SimpleCov.start 'rails'
+  config.include Capybara::DSL
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
