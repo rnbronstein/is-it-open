@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160603182846) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "blacklists", force: :cascade do |t|
     t.integer "member_id"
     t.integer "venue_id"
