@@ -33,10 +33,13 @@ gem 'figaro'
 
 gem 'pg'
 
+gem 'simplecov', :require => false, :group => :test
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'capybara'
 end
 
 group :development do
