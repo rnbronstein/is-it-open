@@ -1,4 +1,4 @@
-<h1>IsItOpen?
+<h1>IsItOpen?</h1>
 
 IsItOpen is a Flatiron school project created by Einar Stensson and Rachel Bronstein. This app will show you what venues near you are open right now by type. You can customize your IsItOpen page by logging in using your Facebook account.
 
