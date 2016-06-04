@@ -33,6 +33,8 @@ gem 'figaro'
 
 gem 'pg'
 
+gem 'simplecov', :require => false, :group => :test
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
