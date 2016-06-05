@@ -34,6 +34,7 @@ gem 'figaro'
 gem 'pg'
 
 gem 'bootstrap-sass'
+gem 'rest-client', '~> 1.8'
 
 group :development, :test do
   gem 'simplecov', require: false
