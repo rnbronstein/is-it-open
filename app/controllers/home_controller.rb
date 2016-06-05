@@ -1,5 +1,4 @@
 class HomeController <ApplicationController
-
   def index
     # Adapters
     # - Connect to Google Places.

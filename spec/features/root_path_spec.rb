@@ -22,7 +22,7 @@ RSpec.describe "HomeController", type: :feature do
     it 'displays information for a venue.' do
       expect(page).to have_css('.venue-info')
     end
-    
+
     it "has a show more button for lazy loading." do
       expect(page).to have_css('button.show-more')
     end
