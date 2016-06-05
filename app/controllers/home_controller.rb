@@ -2,11 +2,11 @@ class HomeController <ApplicationController
 
   def index
     # Adapters
-    # - Connect to Google Places.
-    g_places_api = Adapter::GooglePlacesWrapper.new
+    # Google Places Client
+    @client = Adapter::GooglePlacesWrapper.new
 
-    g_places_api.run_search
-    # Create a venue object
+    debugger
+    # Create a venue objecte
     # -services for the Venue Model for extracting the fields we want.
   end
 end
