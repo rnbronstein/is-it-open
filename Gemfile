@@ -33,6 +33,8 @@ gem 'figaro'
 
 gem 'pg'
 
+gem 'bootstrap-sass'
+
 group :development, :test do
   gem 'simplecov', require: false
   gem 'byebug'
