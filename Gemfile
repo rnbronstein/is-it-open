@@ -33,6 +33,8 @@ gem 'figaro'
 
 gem 'pg'
 
+gem 'rest-client', '~> 1.8'
+
 group :development, :test do
   gem 'simplecov', require: false
   gem 'byebug'
