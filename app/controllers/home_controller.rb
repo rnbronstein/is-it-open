@@ -1,22 +1,30 @@
-class HomeController <ApplicationController
-  before_action :set_location, only: :index
+class HomeController < ApplicationController
+  before_action :set_location, only: [:index, :search]
 
   def index
+    @key = ENV['google_api_key']
+
     # Adapters
     # - Connect to Google Places.
-    g_places_api = Adapter::GooglePlacesWrapper.new
-
-    g_places_api.run_search
+    # g_places_api = Adapter::GooglePlacesWrapper.new
+    #
+    # g_places_api.run_search
     # Create a venue object
     # -services for the Venue Model for extracting the fields we want.
+  end
+
+  def search
+    respond_to do |format|
+      format.json { render json: ENV['google_api_key'] }
+    end
   end
 
   private
 
   def set_location
-    client_ip = remote_ip()
-    @latitude = client_ip.latitude
-    @longitude = client_ip.longitude
+    @coordinates = Geocoder.coordinates(set_ip)
+    @latitude = @coordinates.first
+    @longitude = @coordinates.last
   end
 
 end

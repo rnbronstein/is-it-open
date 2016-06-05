@@ -6,14 +6,17 @@
   </div>
 
   <div class="row">
-    <form class="form-horizontal form-search-by-type">
-      <div class="col-md-10 form-group">
-        <input class="form-control" type="text" name="type" placeholder="What are you looking for?">
+    <%= form_tag({controller: 'home', action: 'search'}, method: 'post', remote: true, class: "form-horizontal form-search-by-type") do %>
+      <div class="col-md-5 form-group">
+        <input class="form-control" id="search-type" type="text" name="type" placeholder="What are you looking for?">
+      </div>
+      <div class="col-md-5 form-group">
+        <input class="form-control" id="search-keyword" type="text" name="keyword" placeholder="Keyword (Optional)">
       </div>
       <div class="col-md-2 form-group">
-        <input class="btn btn-primary" type="submit" name="submit" value="submit">
+        <input class="btn btn-primary" id="submit" type="submit" name="submit" value="submit">
       </div>
-    </form>
+    <% end %>
   </div>
 
 </div>

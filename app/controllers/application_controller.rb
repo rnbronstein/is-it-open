@@ -3,11 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def remote_ip
-    if request.remote_ip == '127.0.0.1'
+  def set_ip
+    #sets a remote IP for development; can remove this method in production and just call request.ip
+    if request.ip == '127.0.0.1' || request.ip == "::1"
       '96.246.147.107'
     else
-      request.remote_ip
+      request.ip
     end
   end
 end

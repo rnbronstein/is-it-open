@@ -1,0 +1,27 @@
+// $(function(){
+//   $(".form-search-by-type").submit(function(e){
+//     e.preventDefault
+//     alert('<%= @latitude %>')
+//     debugger
+//   })
+// })
+
+$(function(){
+  submitForm()
+  debugger
+})
+
+function setKey(){
+  var new_key = new ApiKey('<%= @key %>')
+  return new_key.key
+}
+
+function setLatitude(){
+  var latitude = "<%= @latitude %>"
+  return latitude
+}
+
+function setLongitude(){
+  var longitude = "<%= @longitude %>"
+  return longitude
+}
