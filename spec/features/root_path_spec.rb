@@ -7,20 +7,28 @@ RSpec.describe "HomeController", type: :feature do
       page.save_and_open_page
     end
 
-    it "displays the welcome message" do
-      expect(page).to have_content("Live long and prosper")
+    it "has a form to allow users to search by type." do
+      expect(page).to have_css('form.form-search-by-type')
     end
 
-    xit "has three bootstrap column divs." do
+    it 'displays the title of a venue.' do
+      expect(page).to have_css('.venue-title')
     end
 
-    xit "has a show more button for lazy loading." do
+    it 'displays an image for the venue.' do
+      expect(page).to have_css('.venue-img')
+    end
+
+    it 'displays information for a venue.' do
+      expect(page).to have_css('.venue-info')
+    end
+    
+    it "has a show more button for lazy loading." do
+      expect(page).to have_css('button.show-more')
     end
 
     xit "has a log in using Facebook button." do
     end
 
-    xit "has a background appended to the body tag." do
-    end
    end
  end

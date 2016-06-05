@@ -1,12 +1,12 @@
 <div class="jumbotron">
   <div class="row">
     <div class='col-md-12'>
-      <h2>Is It Open?</h2>
+      <h2 class="heading">Is It Open?</h2>
     </div>
   </div>
 
   <div class="row">
-    <form class="form-horizontal">
+    <form class="form-horizontal form-search-by-type">
       <div class="col-md-10 form-group">
         <input class="form-control" type="text" name="type" placeholder="What are you looking for?">
       </div>
@@ -32,12 +32,12 @@
           </script>
           <button type="button" class="close" data-toggle="tooltip" data-placement="left" data-trigger="hover focus" aria-label="Close" title="Dismiss this venue from future searches"><span aria-hidden="true">&times;</span></button></button>
           <!-- Location title -->
-          <h5>Bob's Burgers</h5>
+          <h5 class="venue-title">Bob's Burgers</h5>
           <!-- Location thumbnail; accessible via Google Place Photos api call -->
-          <img class="img-responsive img-thumbnail" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyCY1evTMnMd-GWCnR0_1yWAK40pZBo9vo4" alt="Sophies Cuban Cuisine" />
+          <img class="img-responsive img-thumbnail venue-img" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyCY1evTMnMd-GWCnR0_1yWAK40pZBo9vo4" alt="Sophies Cuban Cuisine" />
         </div>
         <!-- Venue information -->
-        <div class="col-md-3 hidden">
+        <div class="col-md-3 hidden venue-info">
           <ul>
             <li>Name: Bob's Burgers</li>
             <li>Address: 42 Wallaby Way</li>
@@ -47,5 +47,5 @@
         </div>
       <% end %>
     </div>
-    <button type="button" class="btn btn-primary" name="show">Show me more!</button>
+    <button type="button" class="btn btn-primary show-more" name="show">Show me more!</button>
 </div>
