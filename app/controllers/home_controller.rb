@@ -1,24 +1,16 @@
 class HomeController < ApplicationController
-  before_action :set_location, only: [:index, :search]
+  before_action :initialize_google_client, only: [:index, :search]
 
   def index
-    # Adapters
-    # - Connect to Google Places.
-    # g_places_api = Adapter::GooglePlacesWrapper.new
-    #
-    # g_places_api.run_search
-    # Create a venue object
-    # -services for the Venue Model for extracting the fields we want.
+
   end
 
   def search
-    binding.pry
-    # @type = params[:type]
-    # @keyword = params[:keyword] if params[:keyword]
+    render :json => { response_string: @google_client.search_call()}
+  end
 
-    google_api = Adapter::GooglePlacesWrapper.new(type: params[:type], latitude: @latitude, longitude: @longitude, keyword: params[:keyword])
-    google_api.call
-    render :json => { response_string: google_api.call}
+  def default
+    render :json => { response_string: @google_client.default_call()}
   end
 
   private
@@ -29,4 +21,9 @@ class HomeController < ApplicationController
     @longitude = @coordinates.last
   end
 
+  def initialize_google_client
+    set_location
+    @google_client = Adapter::GooglePlacesWrapper.new(type: "restaurant",
+      latitude: @latitude, longitude: @longitude)
+  end
 end
