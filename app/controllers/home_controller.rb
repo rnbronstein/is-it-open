@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @venues = []
+  end
 
     # Loop through the default_call and add Venue.new objects to
     # the @venues array. Each Venue.new object will require its
@@ -40,4 +41,5 @@ class HomeController < ApplicationController
     @search_client = Adapter::GooglePlacesWrapper.new(type: "restaurant",
       latitude: @latitude, longitude: @longitude)
   end
+
 end

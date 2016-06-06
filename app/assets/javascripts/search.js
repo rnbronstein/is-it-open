@@ -28,16 +28,16 @@ function sendData(type, keyword){
   })
 }
 
-function detailRequest(place_id){
-  var data = {
-    'place_id': place_id
-  }
-  $.ajax({
-    url: <%= details_path %>,
-    method: "POST",
-    dataType: "json"
-    data: JSON.stringify(data),
-    success: alert("succes"),
-    error: alert("AJAX error")
-  })
-}
+// function detailRequest(place_id){
+//   var data = {
+//     'place_id': place_id
+//   }
+//   $.ajax({
+//     url: <%= details_path %>,
+//     method: "POST",
+//     dataType: "json"
+//     data: JSON.stringify(data),
+//     success: alert("succes"),
+//     error: alert("AJAX error")
+//   })
+// }
