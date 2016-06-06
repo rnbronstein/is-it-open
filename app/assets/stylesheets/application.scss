@@ -23,3 +23,26 @@
   z-index:999;
   position:relative;
 }
+
+.venue-thumbnail-frame{
+  height: 90px;
+  width: 160px;
+  background: black;
+  overflow: hidden;
+  border: 2px solid black;
+  white-space: nowrap;
+  text-align: center; margin: 1em 0;
+}
+
+.helper{
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.venue-img{
+  background: #3A6F9A;
+  vertical-align: middle;
+  max-height: 100px;
+  max-width: 160px;
+}
