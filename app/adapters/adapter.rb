@@ -50,27 +50,5 @@ module Adapter
       response = RestClient.get(url)
       JSON.parse(response)
     end
-
-  end
-
-  def call
-    url_params = "location=#{@latitude},#{@longitude}&openNow=true&radius=5000&type=#{@type}&keyword=#{@keyword}&key=#{@key}"
-    response = RestClient.get(base_url + url_params)
-
-    JSON.parse(response)
-  end
-
-  class PlaceDetailsWrapper
-    def initialize(place_id)
-      @place_id = place_id
-      @key = ENV['google_api_key']
-    end
-
-    def details_call
-      url = "https://maps.googleapis.com/maps/api/place/details/json?place_id=#{@place_id}&key=#{@key}"
-      response = RestClient.get(url)
-      JSON.parse(response)
-    end
-
   end
 end
