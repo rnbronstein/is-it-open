@@ -13,12 +13,6 @@ class HomeController < ApplicationController
     # -services for the Venue Model for extracting the fields we want.
   end
 
-  def search
-    respond_to do |format|
-      format.json { render json: ENV['google_api_key'] }
-    end
-  end
-
   private
 
   def set_location
