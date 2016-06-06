@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   before_action :initialize_google_client
 
   def create
-    Adapter::GooglePlacesWrapper.new()
+    #
     @venues = all the stuff
 
     respond_to do |format|

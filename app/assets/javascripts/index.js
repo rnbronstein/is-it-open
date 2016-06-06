@@ -3,7 +3,6 @@ $(function(){
   $('.venue-info').hide()
   showInfo()
   hideInfo()
-  getDefaultVenues("restaurant")
 })
 
 function showInfo(){
