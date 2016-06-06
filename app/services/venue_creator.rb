@@ -1,5 +1,4 @@
 class VenueCreator
-
   def initialize(venue)
     @details_client = build_details_client(venue)
   end
