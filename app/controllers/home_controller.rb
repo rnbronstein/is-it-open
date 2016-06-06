@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :initialize_google_client, only: [:index, :search]
+  before_action :search_client, only: [:index, :search]
 
   def index
     @venues = []
@@ -13,13 +13,18 @@ class HomeController < ApplicationController
 #    end
 
     #vs.
-    @google_client.default_call()['results'].each do |venue|
-      @venues << @google_client.details_call(venue) #returns a JSON element { name: "Spock's restaurant", }
+    @search_client.default_call()['results'].each do |venue|
+      @details_client = place_details_client(venue)
+      @venues << @details_client.details_call #returns a JSON element { name: "Spock's restaurant", }
     end
+
+    binding.pry
+    # Move this logic to a service. Use attr accessors in the Venue model to build temporary Venue objects.
+    # @venues = VenueFetcher.new.fetch_venues
   end
 
   def search
-    render :json => { response_string: @google_client.search_call()}
+    render :json => { response_string: @search_client.search_call()}
   end
 
   private
@@ -30,9 +35,9 @@ class HomeController < ApplicationController
     @longitude = @coordinates.last
   end
 
-  def initialize_google_client
+  def search_client
     set_location
-    @google_client = Adapter::GooglePlacesWrapper.new(type: "restaurant",
+    @search_client = Adapter::GooglePlacesWrapper.new(type: "restaurant",
       latitude: @latitude, longitude: @longitude)
   end
 end

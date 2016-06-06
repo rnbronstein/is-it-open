@@ -8,6 +8,7 @@ module Adapter
       @type = type
       @latitude = latitude
       @longitude = longitude
+      @keyword = keyword
     end
 
     def base_url
@@ -18,18 +19,36 @@ module Adapter
       "&location=#{@latitude},#{@longitude}&type=#{@type}&key=#{@key}"
     end
 
-    def search_params(keyword, type = @type)
-      "&location=#{@latitude},#{@longitude}&type=#{type}&keyword=#{keyword}&key=#{@key}"
+    def search_params
+      "&location=#{@latitude},#{@longitude}&type=#{@type}&keyword=#{@keyword}&key=#{@key}"
+    end
+
+    def url
+      base_url + search_params
     end
 
     def search_call
-      response = RestClient.get(base_url + search_params)
+      response = RestClient.get(url)
       JSON.parse(response)
     end
 
     def default_call
-      response = RestClient.get(base_url + default_params)
+      response = RestClient.get(url)
       JSON.parse(response)
     end
+  end
+
+  class PlaceDetailsWrapper
+    def initialize(place_id)
+      @place_id = place_id
+      @key = ENV['google_api_key']
+    end
+
+    def details_call
+      url = "https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@place_id}&key=#{@key}"
+      response = RestClient.get(url)
+      JSON.parse(response)
+    end
+
   end
 end
