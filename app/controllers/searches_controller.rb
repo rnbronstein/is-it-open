@@ -1,13 +1,13 @@
-class HomeController < ApplicationController
-  before_action :initialize_google_client, only: [:index, :search]
+class SearchesController < ApplicationController
+  before_action :initialize_google_client
 
-  def index
+  def create
+    Adapter::GooglePlacesWrapper.new()
+    @venues = all the stuff
 
+    #render :json => { response_string: @google_client.search_call()}
   end
 
-  def default
-    render :json => { response_string: @google_client.default_call()}
-  end
 
   private
 
@@ -22,4 +22,5 @@ class HomeController < ApplicationController
     @google_client = Adapter::GooglePlacesWrapper.new(type: "restaurant",
       latitude: @latitude, longitude: @longitude)
   end
+
 end

@@ -17,7 +17,7 @@ function sendData(type, keyword){
     'keyword': keyword
   }
   $.ajax({
-    url: <%= search_path %>,
+    url: '/search',
     method: "POST",
     dataType: "json",
     data: JSON.stringify(data),
