@@ -13,17 +13,20 @@ module Adapter
     end
 
     def base_url
-      'https://maps.googleapis.com/maps/api/place/radarsearch/json?radius=500&opennow'
+      'https://maps.googleapis.com/maps/api/place/radarsearch/json?'
     end
 
     def call
-      url_params = "&location=#{@latitude},#{@longitude}&type=#{@type}&keyword=#{@keyword}&key=#{@key}"
+      url_params = "location=#{@latitude},#{@longitude}&openNow=true&radius=5000&type=#{@type}&keyword=#{@keyword}&key=#{@key}"
       binding.pry
       response = RestClient.get(base_url + url_params)
       JSON.parse(response)
     end
 
 
+# https://maps.googleapis.com/maps/api/place/radarsearch/json?location=51.503186,-0.126446&radius=5000&type=museum&opennow&key=AIzaSyCY1evTMnMd-GWCnR0_1yWAK40pZBo9vo4
+#
+# https://maps.googleapis.com/maps/api/place/radarsearch/json?location=40.9513,-73.8773&radius=5000&type=cafe&key=AIzaSyCY1evTMnMd-GWCnR0_1yWAK40pZBo9vo4
 
     # def run_search
     #
