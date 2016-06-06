@@ -3,8 +3,8 @@
     <h3>Open now near you</h3>
   </div>
 </div>
-  <div class="row">
-    <%  @venues.each do |venue| %>
+  <div class="row venues">
+    <%  venues.each do |venue| %>
       <%= render partial: 'venues/venue', locals: {venue: venue} %>
     <% end %>
   </div>
