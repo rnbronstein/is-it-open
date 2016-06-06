@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   end
 
   def search
-    binding.pry
+    # binding.pry
     # @type = params[:type]
     # @keyword = params[:keyword] if params[:keyword]
 
