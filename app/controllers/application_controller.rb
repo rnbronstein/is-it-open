@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  helper_method :get_venue_photo_reference
+
   def set_ip
     #sets a remote IP for development; can remove this method in production and just call request.ip
     if request.ip == '127.0.0.1' || request.ip == "::1"
@@ -10,5 +12,9 @@ class ApplicationController < ActionController::Base
     else
       request.ip
     end
+  end
+
+  def get_venue_photo_reference(venue)
+    VenueDecorator.new(venue).photo_reference_url
   end
 end
