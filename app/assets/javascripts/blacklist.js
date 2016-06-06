@@ -7,8 +7,10 @@ function buttonClick(){
   $('button.close').click(function(e){
   e.stopPropagation
   $(this).parent().fadeOut('400', function(){
-    var placeID = $('p.place-id')
+    var placeID = $(this).parent().find('p.place-id')
+    debugger
     sendBlacklistVenue(placeID)
+    debugger
   })
 })
 }
@@ -23,8 +25,7 @@ function sendBlacklistVenue(placeID){
     dataType: 'json',
     data: JSON.stringify(data),
     success: function(response){
-      alert(response)
+      console.log(response)
     }
-    error: alert("error :(")
   })
 }

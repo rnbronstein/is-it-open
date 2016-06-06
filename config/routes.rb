@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   post 'default' => 'home#default'
-  post 'search' => 'search#create'
-  get 'preferences' => 'member#preferences', as: 'preferences'
-  post 'create' => 'blacklist#create'
+  post 'search' => 'searches#create'
+  get 'preferences' => 'members#preferences', as: 'preferences'
+  post 'create' => 'blacklists#create'
 end

@@ -6,7 +6,7 @@
   </div>
 
   <div class="row">
-    <%= form_tag({controller: 'search', action: 'create'}, method: 'post', remote: true, class: "form-horizontal form-search-by-type") do %>
+    <%= form_tag({controller: 'searches', action: 'create'}, method: 'post', remote: true, class: "form-horizontal form-search-by-type") do %>
       <div class="col-md-5 form-group">
         <input class="form-control" id="search-type" type="text" name="type" placeholder="What are you looking for?">
       </div>
