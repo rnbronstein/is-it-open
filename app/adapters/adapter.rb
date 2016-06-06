@@ -19,7 +19,7 @@ module Adapter
     def call
       url_params = "location=#{@latitude},#{@longitude}&openNow=true&radius=5000&type=#{@type}&keyword=#{@keyword}&key=#{@key}"
       response = RestClient.get(base_url + url_params)
-      binding.pry
+      #binding.pry
       JSON.parse(response)
     end
 
