@@ -1,15 +1,6 @@
-// $(function(){
-//   $(".form-search-by-type").submit(function(e){
-//     e.preventDefault
-//     alert('<%= @latitude %>')
-//     debugger
-//   })
-// })
-
 $(function(){
   submitForm()
 })
-
 
 function submitForm(){
   $(".form-search-by-type").submit(function(e){
@@ -19,7 +10,6 @@ function submitForm(){
     var searchKeyword = $('input#search-keyword').val()
   })
   sendData(searchType, searchKeyword)
-  debugger
 }
 
 function sendData(type, keyword){
@@ -36,7 +26,3 @@ function sendData(type, keyword){
     error: alert("AJAX error")
   })
 }
-
-// function handleResponse(responseString){
-//
-// }
