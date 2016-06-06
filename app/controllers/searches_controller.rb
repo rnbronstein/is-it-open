@@ -2,13 +2,13 @@ class SearchesController < ApplicationController
   before_action :initialize_google_client
 
   def create
-    #
-    @venues = all the stuff
-
+    @venues = VenueLister.new(set_ip, params[:type], params[:keyword]).venues_with_details
     respond_to do |format|
       format.js
+      # format.json {
+      #   render json: @venues
+      # }
     end
-    #render :json => { response_string: @google_client.search_call()}
   end
 
 
@@ -22,8 +22,8 @@ class SearchesController < ApplicationController
 
   def initialize_google_client
     set_location
-    @google_client = Adapter::GooglePlacesWrapper.new(type: "restaurant",
-      latitude: @latitude, longitude: @longitude)
+    @google_client = Adapter::GooglePlacesWrapper.new(type: params[:type],
+      latitude: @latitude, longitude: @longitude, keyword: params[:keyword])
   end
 
 end
