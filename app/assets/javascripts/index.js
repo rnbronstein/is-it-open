@@ -17,7 +17,3 @@ function hideInfo(){
     info.slideUp('slow')
   })
 }
-
-function getDefaultVenues(type){
-  // debugger
-}
