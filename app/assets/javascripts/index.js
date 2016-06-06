@@ -3,7 +3,6 @@ $(function(){
   $('.venue-info').hide()
   showInfo()
   hideInfo()
-  getDefaultVenues("restaurant")
 })
 
 function showInfo(){
@@ -17,8 +16,4 @@ function hideInfo(){
     var info = $(this).parent().parent().find('.venue-info')
     info.slideUp('slow')
   })
-}
-
-function getDefaultVenues(type){
-  // debugger
 }

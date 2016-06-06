@@ -22,7 +22,6 @@ function sendData(type, keyword){
     method: "POST",
     dataType: "json",
     data: JSON.stringify(data),
-    success: handleResponse(response_string),
     error: alert("AJAX error")
   })
 }
