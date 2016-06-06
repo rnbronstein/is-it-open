@@ -6,9 +6,10 @@ $(function(){
 function buttonClick(){
   $('button.close').click(function(e){
   e.stopPropagation
-  $(this).parent().fadeOut('400')
-  var placeID = $('p.place-id')
-  sendBlacklistVenue(placeID)
+  $(this).parent().fadeOut('400', function(){
+    var placeID = $('p.place-id')
+    sendBlacklistVenue(placeID)
+  })
 })
 }
 
@@ -21,7 +22,9 @@ function sendBlacklistVenue(placeID){
     method: 'POST',
     dataType: 'json',
     data: JSON.stringify(data),
-    success: alert("success!"),
+    success: function(response){
+      alert(response)
+    }
     error: alert("error :(")
   })
 }

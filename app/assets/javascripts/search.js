@@ -7,8 +7,8 @@ function submitForm(){
     e.preventDefault
     var searchType = $('input#search-type').val()
     var searchKeyword = $('input#search-keyword').val()
+    sendData(searchType, searchKeyword)
   })
-  sendData(searchType, searchKeyword)
 }
 
 function sendData(type, keyword){

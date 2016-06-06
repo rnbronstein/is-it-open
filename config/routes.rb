@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   post 'default' => 'home#default'
   post 'search' => 'search#create'
-  get 'preferences' => 'members#preferences', as: 'preferences'
-
+  get 'preferences' => 'member#preferences', as: 'preferences'
+  post 'create' => 'blacklist#create'
 end
