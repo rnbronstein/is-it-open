@@ -1,7 +1,8 @@
 class VenueLister
-  def initialize(ip, type)
+  def initialize(ip, type, keyword=nil)
     locator = IpLocator.new(ip)
-    @search_client = build_search_client(locator.latitude, locator.longitude, type)
+    @keyword = keyword
+    @search_client = build_search_client(locator.latitude, locator.longitude, type, keyword)
   end
 
   def venues_with_details
@@ -18,8 +19,8 @@ class VenueLister
 
   private
 
-  def build_search_client(latitude, longitude, type)
+  def build_search_client(latitude, longitude, type, keyword)
     Adapter::GooglePlacesWrapper.new(type: type,
-      latitude: latitude, longitude: longitude)
+      latitude: latitude, longitude: longitude, keyword: keyword)
   end
 end
