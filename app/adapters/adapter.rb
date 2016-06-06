@@ -11,13 +11,8 @@ module Adapter
       @keyword = keyword
     end
 
-
     def base_url
       'https://maps.googleapis.com/maps/api/place/radarsearch/json?radius=500'
-    end
-
-    def default_params
-      "&location=#{@latitude},#{@longitude}&type=#{@type}&key=#{@key}"
     end
 
     def search_params
@@ -28,12 +23,7 @@ module Adapter
       base_url + search_params
     end
 
-    def search_call
-      response = RestClient.get(url)
-      JSON.parse(response)
-    end
-
-    def default_call
+    def call
       response = RestClient.get(url)
       JSON.parse(response)
     end
