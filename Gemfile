@@ -31,7 +31,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'figaro'
 
+#Postgres
 gem 'pg'
+
+gem 'geocoder'
 
 gem 'bootstrap-sass'
 gem 'rest-client', '~> 1.8'
@@ -42,6 +45,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'capybara'
+  gem 'pry-rails' #I prefer this to byebug
 end
 
 group :development do
