@@ -5,6 +5,9 @@ class SearchesController < ApplicationController
     Adapter::GooglePlacesWrapper.new()
     @venues = all the stuff
 
+    respond_to do |format|
+      format.js
+    end
     #render :json => { response_string: @google_client.search_call()}
   end
 

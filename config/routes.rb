@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   post 'default' => 'home#default'
-  post 'search' => 'home#search'
-  post 'details' => 'home#details'
+  post 'search' => 'search#create'
   get 'preferences' => 'members#preferences', as: 'preferences'
 
 end
