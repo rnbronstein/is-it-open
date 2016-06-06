@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-9">
+    <h3>Open now near you</h3>
+  </div>
+</div>
+  <div class="row">
+    <%  @venues.each do |venue| %>
+      <%= render partial: 'venues/venue', locals: {venue: venue} %>
+    <% end %>
+  </div>
+  <button type="button" class="btn btn-primary show-more" name="show">Show me more!</button>
+</div>

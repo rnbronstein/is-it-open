@@ -1,0 +1,21 @@
+<div class="venue-item">
+  <div class="col-md-3">
+    <!-- Dismiss from results button -->
+    <!-- Popover JS, move to proper file after writing the rest of the jQuery -->
+    <script>
+      $("[data-toggle=tooltip]").tooltip();
+    </script>
+    <button type="button" class="close" data-toggle="tooltip" data-placement="left" data-trigger="hover focus" aria-label="Close" title="Dismiss this venue from future searches"><span aria-hidden="true">&times;</span></button></button>
+    <!-- Location title -->
+    <p class="hidden place-id"><%= venue.google_place_id %></p>
+    <h5 class="venue-title"><%= venue.name %></h5>
+    <!-- Location thumbnail; accessible via Google Place Photos api call -->
+    <img class="img-responsive img-thumbnail venue-img" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyCY1evTMnMd-GWCnR0_1yWAK40pZBo9vo4" alt="Sophies Cuban Cuisine" />
+    <div class="venue-info">
+      <ul>
+        <li>Address: <%= venue.formatted_address %></li>
+        <li>Phone Number: <%= venue.formatted_phone_number %></li>
+      </ul>
+    </div>
+  </div>
+</div>
