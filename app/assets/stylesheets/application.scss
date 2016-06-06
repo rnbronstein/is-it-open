@@ -17,3 +17,9 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.venue-info {
+  display: none;
+  z-index:999;
+  position:relative;
+}

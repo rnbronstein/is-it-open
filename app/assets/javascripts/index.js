@@ -20,5 +20,5 @@ function hideInfo(){
 }
 
 function getDefaultVenues(type){
-  debugger
+  // debugger
 }
