@@ -28,7 +28,7 @@
     <div class="row">
       <% count = 1 %>
       <%  4.times do %>
-        <div id="venue-<%= count %>">
+        <div id="venue-<%= count %>" class="venue-item">
 
         <div class="col-md-3">
           <!-- Dismiss from results button -->
@@ -41,15 +41,14 @@
           <h5 class="venue-title">Bob's Burgers</h5>
           <!-- Location thumbnail; accessible via Google Place Photos api call -->
           <img class="img-responsive img-thumbnail venue-img" id="img-<%= count %>"src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=CnRtAAAATLZNl354RwP_9UKbQ_5Psy40texXePv4oAlgP4qNEkdIrkyse7rPXYGd9D_Uj1rVsQdWT4oRz4QrYAJNpFX7rzqqMlZw2h2E2y5IKMUZ7ouD_SlcHxYq1yL4KbKUv3qtWgTK0A6QbGh87GB3sscrHRIQiG2RrmU_jF4tENr9wGS_YxoUSSDrYjWmrNfeEHSGSc3FyhNLlBU&key=AIzaSyCY1evTMnMd-GWCnR0_1yWAK40pZBo9vo4" alt="Sophies Cuban Cuisine" />
-        </div>
-        <!-- Venue information -->
-        <div class="col-md-3 venue-info" id="info-<%= count %>">
-          <ul>
-            <li>Name: Bob's Burgers</li>
-            <li>Address: 42 Wallaby Way</li>
-            <li>Phone Number: 212-420-6969 </li>
-            <li>Rating: <strong>4.9</strong></li>
-          </ul>
+          <div class="venue-info" id="info-<%= count %>">
+            <ul>
+              <li>Name: Bob's Burgers</li>
+              <li>Address: 42 Wallaby Way</li>
+              <li>Phone Number: 212-420-6969 </li>
+              <li>Rating: <strong>4.9</strong></li>
+            </ul>
+          </div>
         </div>
         <% count += 1 %>
       </div>

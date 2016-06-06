@@ -16,8 +16,9 @@ function showInfo(){
 }
 
 function hideInfo(){
-  $('.venue-info').mouseleave(function(e){
-    $(this).slideUp('slow')
-    $(this).hide()
+  $('.venue-img').mouseleave(function(e){
+    var info = $(this).parent().parent().find('.venue-info')
+    info.slideUp('slow')
+
   })
 }
