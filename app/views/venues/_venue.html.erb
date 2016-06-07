@@ -1,27 +1,20 @@
 <div class="venue-item">
   <div class="col-xs-10 col-sm-5 col-md-4">
-    <!-- Dismiss from results button -->
-    <!-- Popover JS, move to proper file after writing the rest of the jQuery -->
-    <script>
-      $("[data-toggle=tooltip]").tooltip();
-    </script>
-
     <div class="venue-thumbnail-frame <% if !venue.open_now %>closed<% end %>" place-id="<%= venue.google_place_id %>">
-      <!-- Location title -->
-      <p class="hidden place-id"><%= venue.google_place_id %></p>
       <h5 class="venue-title"><%= venue.name %></h5>
-      <!-- Location thumbnail; accessible via Google Place Photos api call -->
-        <span class="helper">
+
+      <span class="helper">
         <img class="venue-img"
-        src="<%= get_venue_photo_reference(venue) %>"
-        alt="<%= venue.name %>" />
-        </span>
-      <div class="venue-info">
-        <ul>
-          <li>Address: <%= venue.formatted_address %></li>
-          <li>Phone Number: <%= venue.formatted_phone_number %></li>
-        </ul>
-      </div>
+          src="<%= get_venue_photo_reference(venue) %>"
+          alt="<%= venue.name %>" />
+
+          <div class="venue-info">
+          <ul>
+            <li>Address: <%= venue.formatted_address %></li>
+            <li>Phone Number: <%= venue.formatted_phone_number %></li>
+          </ul>
+        </div>
+      </span>
     </div>
 
   </div>
