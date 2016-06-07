@@ -12,11 +12,11 @@ module Adapter
     end
 
     def base_url
-      'https://maps.googleapis.com/maps/api/place/radarsearch/json?radius=500'
+      "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
     end
 
     def search_params
-      "&location=#{@latitude},#{@longitude}&type=#{@type}&keyword=#{@keyword}&key=#{@key}"
+      "&location=#{@latitude},#{@longitude}&rankby=distance&types=#{@type}&key=#{@key}"
     end
 
     def url
