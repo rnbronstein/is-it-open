@@ -8,8 +8,8 @@ class VenueLister
     venues = []
 
     @search_client.call()['results'].each do |venue|
-     details_client = VenueCreator.new(venue)
-      venue_details = details_client.get_reduced_venue_details
+     details_client = VenueCreator.new
+      venue_details = details_client.get_reduced_venue_details(venue)
       venues << venue_details if venue_details
     end
 

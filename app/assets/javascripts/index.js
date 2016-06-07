@@ -1,4 +1,3 @@
-
 $(function(){
   $('.venue-info').hide()
   showInfo()
