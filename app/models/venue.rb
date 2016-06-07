@@ -5,5 +5,5 @@ class Venue < ActiveRecord::Base
   validates :google_place_id, presence: true
 
   attr_accessor :formatted_address, :formatted_phone_number,
-    :name, :opening_hours, :photos
+    :name, :opening_hours, :photo, :open_now
 end
