@@ -5,9 +5,6 @@ class SearchesController < ApplicationController
     @venues = VenueLister.new(set_location, params[:type]).venues_with_reduced_details
     respond_to do |format|
       format.js
-      # format.json {
-      #   render json: @venues
-      # }
     end
   end
 
