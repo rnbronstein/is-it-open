@@ -1,9 +1,9 @@
-<div class="jumbotron">
   <div class="row">
-    <div class='col-md-12'>
-      <h2 class="heading">Is It Open?</h2>
+    <div class='col-md-12 header-border-bottom'>
+      <h2 class="josephin-slab">Is It Open?</h2>
     </div>
   </div>
+  <br><br>
 
   <div class="row">
     <%= form_tag({controller: 'searches', action: 'create'}, method: 'post', remote: true, class: "form-horizontal form-search-by-type") do %>
@@ -18,9 +18,5 @@
       </div>
     <% end %>
   </div>
-</div>
 
-<div class="spinner">
-hello
-</div>
 <%= render partial: 'venues/venue_display', locals: {venues: @venues}%>

@@ -18,6 +18,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+//@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
 .venue-info {
   display: none;
   z-index:999;
@@ -25,13 +29,14 @@
 }
 
 .venue-thumbnail-frame{
-  height: 90px;
-  width: 160px;
+  height: 150px;
+  width: 190px;
   background: black;
   overflow: hidden;
-  border: 2px solid black;
+  border: 5px solid white;
   white-space: nowrap;
   text-align: center; margin: 1em 0;
+  color: white;
 }
 
 .helper{
@@ -45,4 +50,26 @@
   vertical-align: middle;
   max-height: 100px;
   max-width: 160px;
+}
+
+.show-more{
+  text-align: center;
+}
+
+.josephin-slab{
+//  font-family: 'Josefin Slab', serif;
+  font-family: 'Poiret One', cursive;
+  color: #ffffcc;
+  font-size: 120px;
+}
+
+.header-border-bottom{
+  border-bottom: 10px white solid;
+}
+
+body{
+//  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background: black;
+  color: white;
 }

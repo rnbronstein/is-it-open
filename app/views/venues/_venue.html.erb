@@ -5,23 +5,26 @@
     <script>
       $("[data-toggle=tooltip]").tooltip();
     </script>
-    <button type="button" class="close" data-toggle="tooltip" data-placement="left" data-trigger="hover focus" aria-label="Close" title="Dismiss this venue from future searches"><span aria-hidden="true">&times;</span></button></button>
-    <!-- Location title -->
-    <p class="hidden place-id"><%= venue.google_place_id %></p>
-    <h5 class="venue-title"><%= venue.name %></h5>
-    <!-- Location thumbnail; accessible via Google Place Photos api call -->
+
     <div class="venue-thumbnail-frame">
-      <span class="helper">
-      <img class="venue-img"
-      src="<%= get_venue_photo_reference(venue) %>"
-      alt="<%= venue.name %>" />
-      </span>
+
+      <button type="button" class="close" data-toggle="tooltip" data-placement="left" data-trigger="hover focus" aria-label="Close" title="Dismiss this venue from future searches"><span aria-hidden="true">&times;</span></button></button>
+      <!-- Location title -->
+      <p class="hidden place-id"><%= venue.google_place_id %></p>
+      <h5 class="venue-title"><%= venue.name %></h5>
+      <!-- Location thumbnail; accessible via Google Place Photos api call -->
+        <span class="helper">
+        <img class="venue-img"
+        src="<%= get_venue_photo_reference(venue) %>"
+        alt="<%= venue.name %>" />
+        </span>
+      <div class="venue-info">
+        <ul>
+          <li>Address: <%= venue.formatted_address %></li>
+          <li>Phone Number: <%= venue.formatted_phone_number %></li>
+        </ul>
+      </div>
     </div>
-    <div class="venue-info">
-      <ul>
-        <li>Address: <%= venue.formatted_address %></li>
-        <li>Phone Number: <%= venue.formatted_phone_number %></li>
-      </ul>
-    </div>
+
   </div>
 </div>
