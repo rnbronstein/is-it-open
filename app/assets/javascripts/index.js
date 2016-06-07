@@ -5,13 +5,13 @@ $(function(){
 })
 
 function showInfo(){
-  $('.venue-img').mouseenter(function(e){
+  $('.venue-thumbnail-frame').mouseenter(function(e){
     $(this).parent().parent().find('.venue-info').slideDown('slow')
   })
 }
 
 function hideInfo(){
-  $('.venue-img').mouseleave(function(e){
+  $('.venue-thumbnail-frame').mouseleave(function(e){
     var info = $(this).parent().parent().find('.venue-info')
     info.slideUp('slow')
   })
