@@ -3,12 +3,11 @@ require 'json'
 
 module Adapter
   class GooglePlacesWrapper
-    def initialize(type: type, latitude: latitude, longitude: longitude, keyword: nil)
+    def initialize(type: type, latitude: latitude, longitude: longitude)
       @key = ENV['google_api_key']
       @type = type
       @latitude = latitude
       @longitude = longitude
-      @keyword = keyword
     end
 
     def base_url
