@@ -25,6 +25,7 @@
 
 .venue-info {
   display: none;
+  padding: 2%;
 }
 
 .venue-thumbnail-frame{
@@ -32,7 +33,7 @@
   width: 290px;
   background: black;
   overflow: hidden;
-  border: 2px solid white;
+  border: 5px solid #40F86D;
   border-radius: 7px;
   white-space: nowrap;
   text-align: center; margin: 1em 0;
@@ -48,7 +49,7 @@
 .venue-img{
   background: #3A6F9A;
   vertical-align: middle;
-  max-height: 240px;
+  max-height: 180px;
   max-width: 280px;
 }
 
@@ -73,13 +74,13 @@ body{
   text-align: center;
 }
 
-
-// .form-search-by-type{
-//   padding-left: 30px;
-// }
-
 .venue-item{
   background: #d4dbd5;
+}
+
+.content{
+  background: rgba(0,0,0,0.7);
+  padding:4%;
 }
 
 .content-wrapper{
@@ -92,21 +93,18 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: image-url('background-image.jpg');
+  background-image: image-url('repeat_cutlery.jpg');
   width: 100%;
   height: 100%;
-  opacity : 0.4;
-  filter: alpha(opacity=40); /* For IE8 and earlier */
+//  opacity : 0.4;
+//  filter: alpha(opacity=40); /* For IE8 and earlier */
   z-index: -1;
 }
 .closed{
-  border: 5px solid red;
+  border: 5px solid #FB77B8;
 }
 
 .container{
-  opacity: 0.9;
-  filter: alpha(opacity=90); /* For IE8 and earlier */
-  background-color: #545C5E;
   border-radius: 10px;
   max-width: 70%;
 }
