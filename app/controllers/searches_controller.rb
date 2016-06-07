@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   before_action :initialize_google_client
 
   def create
-    @venues = VenueLister.new(set_ip, params[:type], params[:keyword]).venues_with_details
+    @venues = VenueLister.new(set_location, params[:type], params[:keyword]).venues_with_details
     respond_to do |format|
       format.js
       # format.json {
@@ -15,9 +15,11 @@ class SearchesController < ApplicationController
   private
 
   def set_location
-    @coordinates = Geocoder.coordinates(set_ip)
-    @latitude = @coordinates.first
-    @longitude = @coordinates.last
+    if params[:location]
+      @coordinates = Geocoder.coordinates(params[:location])
+    else
+      @coordinates = Geocoder.coordinates(set_ip)
+    end
   end
 
   def initialize_google_client
