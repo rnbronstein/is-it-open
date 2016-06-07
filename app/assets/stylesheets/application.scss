@@ -82,3 +82,12 @@ body{
 .venue-item{
   background: #d4dbd5;
 }
+
+.closed{
+  border: 5px solid red;
+}
+
+div.closed *{
+  opacity: 0.6;
+  filter: alpha(opacity=40); /* For IE8 and earlier */
+}
