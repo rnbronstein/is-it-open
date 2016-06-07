@@ -1,6 +1,5 @@
 class VenueCreator
   def get_venue_expanded_details
-    binding.pry
     @details_client = build_details_client(@venue_data)
     @venue = Venue.find_by(place_id: @venue_data['place_id'])
 
@@ -18,7 +17,6 @@ class VenueCreator
 
   def get_reduced_venue_details(venue_data)
     @venue_data = venue_data
-
     if(@venue_data['photos'] && @venue_data['opening_hours']['open_now'])
       Venue.new(formatted_address: @venue_data['vicinity'],
       name: @venue_data['name'], open_now: @venue_data['opening_hours']['open_now'],
