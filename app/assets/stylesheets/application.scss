@@ -30,7 +30,6 @@
 
 .venue-thumbnail-frame{
   height: 250px;
-  width: 290px;
   background: black;
   overflow: hidden;
   border: 5px solid #40F86D;
@@ -49,8 +48,7 @@
 .venue-img{
   background: #3A6F9A;
   vertical-align: middle;
-  max-height: 180px;
-  max-width: 280px;
+  max-height: 190px;
 }
 
 .show-more{
@@ -113,4 +111,30 @@ body{
 div.closed *{
   opacity: 0.6;
   filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.footer-left{
+  float: left;
+  padding-top: 7px;
+  margin-left: 10%;
+  color: rgb(51,122,180);
+}
+
+#footer{
+    position:fixed;
+    height:50px;
+    background-color: rgba(0,0,0,1);
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+    text-align: right;
+    color: white;
+    padding-top: 10px;
+    font-family: Arvo;
+}
+
+.footer-link {
+  padding-left: 10px;
+  text: white;
 }
