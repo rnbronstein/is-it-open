@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'preferences' => 'members#preferences', as: 'preferences'
   post 'create_venue' => 'blacklists#create'
 
-  post 'get_extended_details' => 'venues#get_extended_details'
+  post 'call_for_venue_details' => 'venues#call_for_venue_details'
 end
