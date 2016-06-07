@@ -18,6 +18,7 @@
         }
         google.maps.event.addDomListener(window, 'load', initialize);
         </script>
+
         <%= form_tag({controller: 'searches', action: 'create'}, method: 'post', remote: true, class: "form-horizontal form-search-by-type") do %>
         <div class="col-sm-5 col-md-5 col-lg-5 form-group form-address-div">
           <input class="form-control" id="addressAutocomplete" type="text" name="location" placeholder="Enter your address">
