@@ -3,12 +3,16 @@
 <head>
   <title>IsItOpen</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto:400,700'%>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-<%= yield %>
+<div class="content-wrapper">
+  <div class="container">
+
+    <%= yield %>
+  </div>
 </div>
 
 </body>
