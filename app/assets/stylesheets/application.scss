@@ -56,12 +56,12 @@
   text-align: center;
 }
 
-.josephin-slab{
-//  font-family: 'Josefin Slab', serif;
-  font-family: 'Poiret One', cursive;
-  color: #ffffcc;
-  font-size: 120px;
-}
+// .josephin-slab{
+// //  font-family: 'Josefin Slab', serif;
+//   font-family: 'Poiret One', cursive;
+//   color: #ffffcc;
+//   font-size: 120px;
+// }
 
 .header-border-bottom{
   border-bottom: 10px white solid;
@@ -70,7 +70,8 @@
 body{
 //  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-family: 'Roboto', sans-serif;
-  background: black;
+  background-image: image-url('background-image.jpg');
+  background-color: black;
   color: white;
 }
 
@@ -81,4 +82,15 @@ body{
 
 .venue-item{
   background: #d4dbd5;
+}
+
+.content-wrapper{
+  background-color: #6C7578;
+  opacity: 0.5;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.container{
+  opacity: 0.9;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
