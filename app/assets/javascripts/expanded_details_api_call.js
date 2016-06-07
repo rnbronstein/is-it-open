@@ -7,7 +7,7 @@ function callForExtendedVenueData(){
     url: '/get_extended_details',
     method: "POST",
     success: function(response){
-      alert("ajax success!")
+      // alert("ajax success!")
     },
     error: function(response){
       alert("AJAX error :(")
