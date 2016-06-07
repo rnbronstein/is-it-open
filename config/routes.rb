@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   post 'search' => 'searches#create'
   get 'preferences' => 'members#preferences', as: 'preferences'
   post 'create_venue' => 'blacklists#create'
+
+  post 'get_extended_details' => 'venues#get_extended_details'
 end

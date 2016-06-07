@@ -1,5 +1,1 @@
-$(function(){
-  $('submit').click(function(){
-    <%= j render partial: 'venues/venue_display', locals: { venues: @venues } %>
-  })
-})
+$('.venues').html('<%= j render partial: 'venues/venue_display', locals: { venues: @venues } %>')
