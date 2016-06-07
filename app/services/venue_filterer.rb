@@ -9,6 +9,5 @@ class VenueFilterer
 
     def run_filters
       @filtered_venues += VenueLister.new(@ip, @type).venues_with_details
-      run_filters if @filtered_venues.length < 10
     end
 end
