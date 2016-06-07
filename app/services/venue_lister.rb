@@ -1,6 +1,5 @@
 class VenueLister
   def initialize(location, type, keyword=nil) #location will either be a set of coordinates or an IP address; if the former, it's okay to run the locator service on it anyways
-    binding.pry
     locator = IpLocator.new(location)
     @keyword = keyword
     @search_client = build_search_client(locator.latitude, locator.longitude, type, keyword)
