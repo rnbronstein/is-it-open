@@ -6,7 +6,7 @@
       $("[data-toggle=tooltip]").tooltip();
     </script>
 
-    <div class="venue-thumbnail-frame <% if !venue.open_now %>closed<% end %>">
+    <div class="venue-thumbnail-frame <% if !venue.open_now %>closed<% end %>" place-id="<%= venue.google_place_id %>">
       <!-- Location title -->
       <p class="hidden place-id"><%= venue.google_place_id %></p>
       <h5 class="venue-title"><%= venue.name %></h5>

@@ -1,9 +1,8 @@
 class VenuesController < ApplicationController
-
-  def get_extended_details
-    #get extended details with place_ids (for the selector)
+  def call_for_venue_details
+    @venue_details = VenueCreator.new.get_venue_expanded_details(params['place_id'])
     respond_to do |format|
-      format.js
+      format.json { render json: @venue_details }
     end
   end
 end
