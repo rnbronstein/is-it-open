@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   before_action :initialize_google_client
 
   def create
-    @venues = VenueLister.new(set_location, params[:type], params[:keyword]).venues_with_details
+    @venues = VenueLister.new(set_location, params[:type]).venues_with_reduced_details
     respond_to do |format|
       format.js
       # format.json {
@@ -25,7 +25,7 @@ class SearchesController < ApplicationController
   def initialize_google_client
     set_location
     @google_client = Adapter::GooglePlacesWrapper.new(type: params[:type],
-      latitude: @latitude, longitude: @longitude, keyword: params[:keyword])
+      latitude: @latitude, longitude: @longitude)
   end
 
 end
