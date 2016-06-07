@@ -17,7 +17,7 @@ class VenueCreator
 
   def get_reduced_venue_details(venue_data)
     @venue_data = venue_data
-    if(@venue_data['photos'] && @venue_data['opening_hours']['open_now'])
+    if(@venue_data['photos'] && @venue_data['opening_hours'])
       Venue.new(formatted_address: @venue_data['vicinity'],
       name: @venue_data['name'], open_now: @venue_data['opening_hours']['open_now'],
       photo: @venue_data['photos'].first['photo_reference'])
