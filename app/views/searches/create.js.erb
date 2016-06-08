@@ -1,5 +1,9 @@
-$('.venues').html("<%= j render partial: 'venues/venue_display', locals: { venues: @venues } %>")
-$('.venue-info').hide()
-showInfo()
-hideInfo()
-populateDisplayedVenuesDetails()
+<% if @venues.empty? %>
+  $('.venues').html("<br><br><h1>No results found</h1>")
+<% else %>
+  $('.venues').html("<%= j render partial: 'venues/venue_display', locals: { venues: @venues } %>")
+  $('.venue-info').hide()
+  showInfo()
+  hideInfo()
+  populateDisplayedVenuesDetails()
+<% end %>
