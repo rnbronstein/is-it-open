@@ -89,6 +89,10 @@ body{
   font-family: 'Lato', sans-serif;
   color: white;
 }
+// mobile rendering
+@media screen and {max-width: 600px}{
+  font-size: 100%;
+}
 
 .header{
   text-align: center;
