@@ -157,7 +157,7 @@ function appendVenueDetailsToView(response, venueIdentifier){
   $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Phone:</strong> " + formatted_phone_number + "</p>")
 
   var formatted_address = response['address_components'][0]['long_name'] + " " + response['address_components'][1]['long_name']
-  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Address:</strong> <br>" + formatted_address + "</p>")
+  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Address:</strong> " + formatted_address + "</p>")
 
   var rating = response['rating']
   $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Rating:</strong> " + rating + "</p>")
