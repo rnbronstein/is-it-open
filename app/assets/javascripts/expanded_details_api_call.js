@@ -38,7 +38,7 @@ function callForVenueDetails(venueIdentifier){
   })
 }
 
-function calculateMinutesToClose(periods){
+function calculateMinutesToClose(venue_times){
   var now = new Date()
   var day =  now.getDay()
   var hours = now.getHours()
@@ -46,7 +46,12 @@ function calculateMinutesToClose(periods){
 
   var userMinuteTime = minutes + (hours * 60)
 
-  var closingTime = periods[day]['close']
+  var closingTime = venue_times['periods'][day]['close']
+
+  if(closingTime['time'] === "12:00 AM"){
+    closingTime['time'] = "00:00"
+  }
+
   var closingMinutes = parseInt(closingTime['time'].substring(2,4))
   var closingHours = parseInt(closingTime['time'].substring(0, 2))
 
@@ -64,7 +69,7 @@ function appendVenueDetailsToView(response, venueIdentifier){
   var hours = response['opening_hours']['weekday_text'][day]
   $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Hours: " + hours + "</p>")
 
-  var minutesToClose = calculateMinutesToClose(response['opening_hours']['periods'])
+  var minutesToClose = calculateMinutesToClose(response['opening_hours'])
 
   if(minutesToClose < 0){
     var timeToOpenOrClose = 1440 - (minutesToClose * (-1))
