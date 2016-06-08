@@ -110,14 +110,18 @@ function appendVenueDetailsToView(response, venueIdentifier){
       $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Opening in: " + hoursToOpen + " hours and " + minutesToOpen + " minutes.</p>")
 
       $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').fadeIn('400', function(){
-        $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + hoursToOpen + ":" + minutesToOpen + "</h3>")
+        if(minutesToOpen > 9){
+          $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + hoursToOpen + ":" + minutesToOpen + "</h3>")
+        }else{
+          $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + hoursToOpen + ":0" + minutesToOpen + "</h3>")
+        }
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').addClass("time-to-close")
       })
     }else{
       $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Opening in: " + timeToOpenOrClose + " minutes.</p>")
 
       $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').fadeIn('400', function(){
-        $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + timeToOpenOrClose + "</h3>")
+        $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>:" + timeToOpenOrClose + "</h3>")
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').addClass("time-to-close")
       })
     }
@@ -132,14 +136,18 @@ function appendVenueDetailsToView(response, venueIdentifier){
       $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Closing in: " + hoursToOpen + " hours and " + minutesToOpen + " minutes.</p>")
 
       $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').fadeIn('400', function(){
-        $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + hoursToOpen + ":" + minutesToOpen + "</h3>")
+        if(minutesToOpen > 9){
+          $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + hoursToOpen + ":" + minutesToOpen + "</h3>")
+        }else{
+          $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + hoursToOpen + ":0" + minutesToOpen + "</h3>")
+        }
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').addClass("time-to-open")
       })
     }else{
       $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Closing in: " + timeToOpenOrClose + " minutes.</p>")
 
       $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').fadeIn('400', function(){
-        $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + timeToOpenOrClose + "</h3>")
+        $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>:" + timeToOpenOrClose + "</h3>")
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').addClass("time-to-open")
       })
     }
