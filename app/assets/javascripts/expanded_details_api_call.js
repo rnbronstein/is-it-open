@@ -161,7 +161,11 @@ function appendVenueDetailsToView(response, venueIdentifier){
   var formatted_address = response['address_components'][0]['long_name'] + " " + response['address_components'][1]['long_name']
   $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Address:</strong> " + formatted_address + "</p>")
 
-  var rating = response['rating']
+  if (response['rating']) {
+    var rating = response['rating']
+  } else {
+    var rating = "Not rated"
+  }
   $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Rating:</strong> " + rating + "</p>")
 
   // var website = response['website']
