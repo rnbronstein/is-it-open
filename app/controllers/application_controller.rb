@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   end
 
   def get_venue_photo_reference(venue)
-    VenueDecorator.new(venue).photo_reference_url
+    VenueDecorator.new(venue).set_image
   end
 end
