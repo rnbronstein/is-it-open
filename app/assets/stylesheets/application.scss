@@ -59,6 +59,8 @@
 .venue-thumbnail-frame{
   height: 250px;
   background: black;
+  opacity: 0.8;
+  filter: alpha(opacity=40);
 //  overflow: hidden;
   border: 3px solid #40F86D;
   border-radius: 7px;
@@ -81,10 +83,6 @@
 
 .show-more{
   text-align: center;
-}
-
-.header-row{
-  border-bottom: 5px white solid;
 }
 
 body{
