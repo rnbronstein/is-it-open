@@ -2,11 +2,11 @@
     <div class="header">
       <div class="row header-row">
         <div class='col-xs-12 col-sm-12 col-md-12 logo'>
-          <%= image_tag 'is-it-open.png', :class => 'img-responsive' %>
+          <%= image_tag 'is-it-open.gif', :class => 'img-responsive' %>
         </div>
       </div>
       <br><br>
-
+    <div class="main">
       <div class="row search-form">
         <script type="text/javascript">
         function initialize() {
@@ -31,9 +31,8 @@
         </div>
         <% end %>
       </div>
+      <%= render partial: 'venues/venue_display', locals: {venues: @venues}%>
     </div>
-
-    <%= render partial: 'venues/venue_display', locals: {venues: @venues}%>
   </div>
 
   <footer id="footer">

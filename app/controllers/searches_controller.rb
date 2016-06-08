@@ -12,7 +12,9 @@ class SearchesController < ApplicationController
   private
 
   def set_type
-    params[:type].downcase
+    type = params[:type]
+    downcased = type.downcase
+    downcased.gsub(" ", "_")
   end
 
   def set_location
