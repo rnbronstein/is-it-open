@@ -23,6 +23,7 @@
 //@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
 // @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 @import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 .time-panel{
   width: 80px;
@@ -113,6 +114,12 @@ body{
 
 .venue-item{
   background: #d4dbd5;
+}
+
+.venue-title{
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .main{

@@ -96,7 +96,7 @@ function appendVenueDetailsToView(response, venueIdentifier){
   var day =  now.getDay()
 
   var hours = response['opening_hours']['weekday_text'][day - 1]
-  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Hours: " + hours + "</p>")
+  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Hours:</strong> <br>" + hours + "</p>")
 
   var minutesToClose = calculateMinutesToClose(response['opening_hours'])
 
@@ -107,7 +107,7 @@ function appendVenueDetailsToView(response, venueIdentifier){
     if(timeToOpenOrClose > 60){
       var hoursToOpen = Math.floor(timeToOpenOrClose / 60)
       var minutesToOpen = timeToOpenOrClose % 60
-      $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Opening in: " + hoursToOpen + " hours and " + minutesToOpen + " minutes.</p>")
+      $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Opening in:</strong> " + hoursToOpen + " hours and " + minutesToOpen + " minutes</p>")
 
       $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').fadeIn('400', function(){
         if(minutesToOpen > 9){
@@ -118,7 +118,7 @@ function appendVenueDetailsToView(response, venueIdentifier){
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').addClass("time-to-close")
       })
     }else{
-      $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Opening in: " + timeToOpenOrClose + " minutes.</p>")
+      $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Opening in:</strong> " + timeToOpenOrClose + " minutes</p>")
 
       $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').fadeIn('400', function(){
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>:" + timeToOpenOrClose + "</h3>")
@@ -133,7 +133,7 @@ function appendVenueDetailsToView(response, venueIdentifier){
       var hoursToOpen = Math.floor(timeToOpenOrClose / 60)
       var minutesToOpen = timeToOpenOrClose % 60
 
-      $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Closing in: " + hoursToOpen + " hours and " + minutesToOpen + " minutes.</p>")
+      $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Closing in:</strong> " + hoursToOpen + " hours and " + minutesToOpen + " minutes</p>")
 
       $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').fadeIn('400', function(){
         if(minutesToOpen > 9){
@@ -144,7 +144,7 @@ function appendVenueDetailsToView(response, venueIdentifier){
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').addClass("time-to-open")
       })
     }else{
-      $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Closing in: " + timeToOpenOrClose + " minutes.</p>")
+      $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Closing in:</strong> " + timeToOpenOrClose + " minutes</p>")
 
       $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').fadeIn('400', function(){
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>:" + timeToOpenOrClose + "</h3>")
@@ -154,16 +154,16 @@ function appendVenueDetailsToView(response, venueIdentifier){
   }
 
   var formatted_phone_number = response['formatted_phone_number']
-  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Phone: " + formatted_phone_number + "</p>")
+  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Phone:</strong> " + formatted_phone_number + "</p>")
 
   var formatted_address = response['address_components'][0]['long_name'] + " " + response['address_components'][1]['long_name']
-  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Address: " + formatted_address + "</p>")
+  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Address:</strong> <br>" + formatted_address + "</p>")
 
   var rating = response['rating']
-  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Rating: " + rating + "</p>")
+  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Rating:</strong> " + rating + "</p>")
 
-  var website = response['website']
-  if(website){
-    $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Website: <a href='" + website + "' target='_blank'>website</a></p>")
-  }
+  // var website = response['website']
+  // if(website){
+  //   $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<a href='" + website + "' target='_blank'>website</a></p>")
+  // }
 }
