@@ -20,13 +20,13 @@
         </script>
 
         <%= form_tag({controller: 'searches', action: 'create'}, method: 'post', remote: true, class: "form-horizontal form-search-by-type") do %>
-        <div class="col-xs-12 col-sm-9 col-md-6 form-group form-address-div">
+        <div class="col-xs-12 col-sm-12 col-md-6 form-group form-address-div">
           <input class="form-control" id="addressAutocomplete" type="text" name="location" placeholder="Enter your address">
         </div>
-        <div class="col-xs-12 col-sm-9 col-md-6 form-group form-type-div">
+        <div class="col-xs-12 col-sm-12 col-md-6 form-group form-type-div">
           <input class="form-control" id="search-type" type="text" name="type" placeholder="What are you looking for?">
         </div>
-        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1 form-group form-submit-div">
+        <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 form-group form-submit-div">
           <input class="btn btn-primary btn-form-submit" id="submit" type="submit" name="submit" value="submit">
         </div>
         <% end %>
