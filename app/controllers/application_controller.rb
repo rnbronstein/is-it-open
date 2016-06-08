@@ -7,12 +7,11 @@ class ApplicationController < ActionController::Base
 
   def set_ip
     #sets a remote IP for development; can remove this method in production and just call request.ip
-    # if request.ip == '127.0.0.1' || request.ip == "::1" ==> if having problems in development, uncomment me!
-    #   '96.246.147.107'
-    # else
-    #   request.ip
-    # end
-    request.ip
+    if request.ip == '127.0.0.1' #|| request.ip == "::1" ==> if having problems in development, uncomment me!
+      '96.246.147.107'
+    else
+      request.ip
+    end
   end
 
   def get_venue_photo_reference(venue)
