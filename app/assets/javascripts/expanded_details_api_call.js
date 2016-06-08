@@ -85,6 +85,7 @@ function appendVenueDetailsToView(response, venueIdentifier){
   var minutesToClose = calculateMinutesToClose(response['opening_hours'])
 
   if(response['opening_hours']['open_now'] === false){
+    //render a closed venue
     var timeToOpenOrClose = minutesToClose
 
     if(timeToOpenOrClose > 60){
@@ -97,7 +98,6 @@ function appendVenueDetailsToView(response, venueIdentifier){
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + hoursToOpen + ":" + minutesToOpen + "</h3>")
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').addClass("time-to-close")
       })
-
     }else{
       $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Opening in: " + timeToOpenOrClose + " minutes.</p>")
 
@@ -105,9 +105,9 @@ function appendVenueDetailsToView(response, venueIdentifier){
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').append("<h3>" + timeToOpenOrClose + "</h3>")
         $('div[place-id='+venueIdentifier['place_id']+'] .time-panel').addClass("time-to-close")
       })
-
     }
   }else{
+    //render an open venue
     var timeToOpenOrClose = minutesToClose
 
     if(timeToOpenOrClose > 60){
