@@ -19,8 +19,8 @@
  @import "bootstrap";
 
 //@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+// @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 .time-panel{
   width: 80px;
@@ -40,12 +40,12 @@
 }
 
 .time-to-open{
-  border: 5px solid #40F86D;
+  border: 3px solid #40F86D;
   background: #02310e;
 }
 
 .time-to-close{
-  border: 5px solid #FB77B8;
+  border: 3px solid #FB77B8;
   background: #31021a;
 }
 
@@ -58,7 +58,7 @@
   height: 250px;
   background: black;
 //  overflow: hidden;
-  border: 5px solid #40F86D;
+  border: 3px solid #40F86D;
   border-radius: 7px;
   white-space: nowrap;
   text-align: center; margin: 1em 0;
@@ -86,7 +86,7 @@
 }
 
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
   color: white;
 }
 
@@ -102,7 +102,7 @@ body{
   background: #d4dbd5;
 }
 
-.content{
+.main{
   background: rgba(0,0,0,0.7);
   padding:4%;
 }
@@ -117,7 +117,7 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: image-url('repeat_cutlery.jpg');
+  background-image: image-url('background.png');
   width: 100%;
   height: 100%;
 //  opacity : 0.4;
