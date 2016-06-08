@@ -102,7 +102,7 @@ types.forEach(function(type){
   $("#search-type").autocomplete({
     source: formatted
   })
-debugger
+
 function formatWord(word){
   var str = word.replace(/[_-]/g, " ")
   return str.replace(/\w\S*/g, function(txt) {
