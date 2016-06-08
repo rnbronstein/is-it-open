@@ -2,7 +2,7 @@
     <div class="header">
       <div class="row header-row">
         <div class='col-xs-12 col-sm-12 col-md-12 logo'>
-          <%= image_tag 'neonlogobox.gif', :class => 'img-responsive' %>
+          <%= link_to (image_tag 'neonlogobox.gif', :class => 'img-responsive'), root_path %>
         </div>
       </div>
       <br>
@@ -31,7 +31,11 @@
         </div>
         <% end %>
       </div>
-      <%= render partial: 'venues/venue_display', locals: {venues: @venues}%>
+      <% if @venues.empty? %>
+        <h1>No results found</h1>
+      <% else %>
+        <%= render partial: 'venues/venue_display', locals: {venues: @venues}%>
+      <% end %>
     </div>
   </div>
 
