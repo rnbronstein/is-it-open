@@ -39,27 +39,40 @@ function callForVenueDetails(venueIdentifier){
 }
 
 function calculateMinutesToClose(venue_times){
-  var now = new Date()
-  var day =  now.getDay()
-  var hours = now.getHours()
-  var minutes = now.getMinutes()
+   if(venue_times['periods'][0]['open']['time'] === "00:00"){
+    return null
+  }else{
+    var now = new Date()
+    var day =  now.getDay()
+    var hours = now.getHours()
+    var minutes = now.getMinutes()
 
-  var userMinuteTime = minutes + (hours * 60)
+    var userMinuteTime = minutes + (hours * 60)
 
-  var closingTime = venue_times['periods'][day]['close']
+    var closingTime = venue_times['periods'][day]['close']
+    var closingMinutes = parseInt(closingTime['time'].substring(2,4))
+    var closingHours = parseInt(closingTime['time'].substring(0, 2))
 
-  if(closingTime['time'] === "12:00 AM"){
-    closingTime['time'] = "00:00"
+    var closingMinuteTime = closingMinutes + (closingHours * 60)
+
+    var openingTime = venue_times['periods'][day]['open']
+    var openingMinutes = parseInt(openingTime['time'].substring(2,4))
+    var openingHours = parseInt(openingTime['time'].substring(0, 2))
+
+    var openingMinuteTime = openingMinutes + (openingHours * 60)
+
+    if(closingMinuteTime < openingMinuteTime){
+      closingMinuteTime += 1440
+    }
+
+    var minutesToClose = closingMinuteTime - openingMinuteTime
+
+    if(venue_times['open_now'] === false){
+      return openingMinuteTime - userMinuteTime
+    }else{
+      return minutesToClose
+    }
   }
-
-  var closingMinutes = parseInt(closingTime['time'].substring(2,4))
-  var closingHours = parseInt(closingTime['time'].substring(0, 2))
-
-  var closingMinuteTime = closingMinutes + (closingHours * 60)
-
-  var minutesToClose = closingMinuteTime - userMinuteTime
-
-  return minutesToClose
 }
 
 function appendVenueDetailsToView(response, venueIdentifier){
@@ -71,8 +84,8 @@ function appendVenueDetailsToView(response, venueIdentifier){
 
   var minutesToClose = calculateMinutesToClose(response['opening_hours'])
 
-  if(minutesToClose < 0){
-    var timeToOpenOrClose = 1440 - (minutesToClose * (-1))
+  if(response['opening_hours']['open_now'] === false){
+    var timeToOpenOrClose = minutesToClose
 
     if(timeToOpenOrClose > 60){
       var hoursToOpen = Math.floor(timeToOpenOrClose / 60)
