@@ -14,15 +14,19 @@ class SearchesController < ApplicationController
   def set_type
     type = params[:type]
     downcased = type.downcase
-    downcased.gsub(" ", "_")
+    result = downcased.gsub(" ", "_")
+    result
+    # binding.pry
   end
 
   def set_location
-    if params[:location]
-      @coordinates = Geocoder.coordinates(params[:location])
-    else
+  #   binding.pry
+    if params[:location].blank?
       @coordinates = Geocoder.coordinates(set_ip)
+    else
+      @coordinates = Geocoder.coordinates(params[:location])
     end
+    # binding.pry
   end
 
   def initialize_google_client

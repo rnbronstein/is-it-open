@@ -13,6 +13,8 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 *= require_self
 *= require_tree
+*= require jquery-ui/core
+*= require jquery-ui/theme
  */
 
  @import "bootstrap-sprockets";
@@ -103,7 +105,8 @@ body{
 }
 
 .main{
-  background: rgba(0,0,0,0.7);
+//  background: rgba(0,0,0,0.3);
+  background: transparent;
   padding:4%;
 }
 
@@ -117,13 +120,14 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-  background-image: image-url('background.png');
+  background-image: image-url('brick4.png');
   width: 100%;
   height: 100%;
 //  opacity : 0.4;
 //  filter: alpha(opacity=40); /* For IE8 and earlier */
   z-index: -1;
 }
+
 .closed{
   border: 5px solid #FB77B8;
 }
@@ -131,8 +135,8 @@ body{
 .container{
   border-radius: 10px;
   max-width: 70%;
-}
 
+}
 
 .closed img{
   opacity: 0.5;
