@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   before_action :initialize_google_client
 
   def create
-    @venues = VenueLister.new(set_location, params[:type]).venues_with_reduced_details
+    @venues = VenueLister.new(set_location, set_type).venues_with_reduced_details
     respond_to do |format|
       format.js
     end
@@ -10,6 +10,10 @@ class SearchesController < ApplicationController
 
 
   private
+
+  def set_type
+    params[:type].downcase
+  end
 
   def set_location
     if params[:location]
