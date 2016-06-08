@@ -58,6 +58,12 @@ function calculateMinutesToClose(periods){
 }
 
 function appendVenueDetailsToView(response, venueIdentifier){
+  var now = new Date()
+  var day =  now.getDay()
+
+  var hours = response['opening_hours']['weekday_text'][day]
+  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Hours: " + hours + "</p>")
+
   var minutesToClose = calculateMinutesToClose(response['opening_hours']['periods'])
 
   if(minutesToClose < 0){

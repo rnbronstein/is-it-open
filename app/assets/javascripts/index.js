@@ -6,15 +6,18 @@ $(function(){
 
 function showInfo(){
   $('.venue-thumbnail-frame').mouseenter(function(e){
-    $(this).parent().parent().find('.helper img').hide()
-    $(this).parent().parent().find('.venue-info').fadeIn('400')
+    $(this).parent().parent().find('.helper img').hide(function(){
+      $(this).parent().parent().find('.venue-info').show()
+    })
   })
 }
 
+
 function hideInfo(){
   $('.venue-thumbnail-frame').mouseleave(function(e){
-    $(this).parent().parent().find('.helper img').fadeIn('400')
     var info = $(this).parent().parent().find('.venue-info')
-    info.hide()
+    info.hide(function(){
+      $(this).parent().parent().find('.helper img').show()
+    })
   })
 }
