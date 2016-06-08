@@ -81,9 +81,10 @@ function calculateMinutesToClose(venue_times){
       closingMinutes += 1440
     }
 
-    var minutesToClose = closingMinutes - openingMinutes
+    var minutesToClose = closingMinutes - userMinuteTime
+
     if(venue_times['open_now'] === false){
-      debugger
+      return openingMinutes - userMinuteTime
     }else{
       return minutesToClose
     }
@@ -98,7 +99,6 @@ function appendVenueDetailsToView(response, venueIdentifier){
   $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p>Hours: " + hours + "</p>")
 
   var minutesToClose = calculateMinutesToClose(response['opening_hours'])
-
 
   if(response['opening_hours']['open_now'] === false){
     //render a closed venue
