@@ -1,6 +1,7 @@
 <div class="venue-item">
   <div class="col-xs-10 col-sm-5 col-md-4">
     <div class="venue-thumbnail-frame <% if !venue.open_now %>closed<% end %>" place-id="<%= venue.google_place_id %>">
+      <div class='time-panel'></div>
       <h5 class="venue-title"><%= venue.name %></h5>
 
       <span class="helper">
