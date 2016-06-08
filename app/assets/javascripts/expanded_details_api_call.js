@@ -96,7 +96,9 @@ function appendVenueDetailsToView(response, venueIdentifier){
   var day =  now.getDay()
 
   var hours = response['opening_hours']['weekday_text'][day - 1]
-  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Hours:</strong> <br>" + hours + "</p>")
+  var formattedHours = hours.split(': ')[1]
+  debugger
+  $('div[place-id='+venueIdentifier['place_id']+'] .venue-info').append("<p><strong>Today's Hours:</strong> <br>" + formattedHours + "</p>")
 
   var minutesToClose = calculateMinutesToClose(response['opening_hours'])
 
