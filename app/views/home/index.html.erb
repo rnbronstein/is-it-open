@@ -34,9 +34,14 @@
     </div>
 
     <%= render partial: 'venues/venue_display', locals: {venues: @venues}%>
-
-    <div class="row show-more">
-      <button type="button" class="btn btn-primary" name="show">Show me more!</button>
-    </div>
-
   </div>
+
+  <footer id="footer">
+    <div class="footer-left">
+      <p>Created by: Einar Stensson & Rachel Bronstein</p>
+    </div>
+    <div class="container">
+      <p><a href="#">About IsItOpen?</a>
+      <%= image_tag 'flatiron-slashes.png' %></p>
+    </div>
+  </footer>
