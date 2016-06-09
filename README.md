@@ -13,4 +13,4 @@ It's all about tests and robust code.
 - Rubocop for the code formatting.
 
 <h2>Contibute!</h2>
-Although this is a Flatiron School project, we welcome other students and developers to contribute to the code. Check out the issues page to get started. You can find the live version of IsItOpen on http://xxxxxxxxxxxx.herokuapp.com
+Although this is a Flatiron School project, we welcome other students and developers to contribute to the code. Check out the issues page to get started. You can find the live version of IsItOpen on https://isitopenapp.herokuapp.com/
