@@ -82,7 +82,7 @@ function calculateTimeToChangeStatus(venueTimeObject){
     var closeTimeValue = closeTime(venueTimeObject, today);
     var close = setTimeInMinutes(closeTimeValue);
     var nextTimeOpenValue = openTime(venueTimeObject, (today + 1));
-    var nextTimeOpen = setTimeInMinutes(nextTimeOpenValue);
+    var nextTimeOpen = setTimeInMinutes(nextTimeOpenValue)
     if (venueTimeObject['open_now'] === true){
       debugger;
       return close - rightNow;
