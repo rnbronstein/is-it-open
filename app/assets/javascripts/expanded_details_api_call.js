@@ -51,7 +51,7 @@ function currentTimeInMinutes(time){
 }
 
 function setTimeInMinutes(time){
-  var timeAsMoment = moment(time, 'H HH');
+  var timeAsMoment = moment(`${time}`, 'hhmm');
   return moment.duration({
     hours: timeAsMoment.hours(),
     minutes: timeAsMoment.minutes()
@@ -81,15 +81,25 @@ function calculateTimeToChangeStatus(venueTimeObject){
     var open = setTimeInMinutes(openTimeValue);
     var closeTimeValue = closeTime(venueTimeObject, today);
     var close = setTimeInMinutes(closeTimeValue);
-    var nextTimeOpenValue = openTime(venueTimeObject, (today + 1));
-    var nextTimeOpen = setTimeInMinutes(nextTimeOpenValue)
     if (venueTimeObject['open_now'] === true){
-      debugger;
       return close - rightNow;
     } else if (venueTimeObject['open_now'] === false) {
-      var timeUntilTomorrow = 2400 - rightNow;
-      return timeUntilTomorrow + nextTimeOpen;
+      return calculateNextTimeOpen(venueTimeObject, rightNow);
     }
+  }
+}
+
+function calculateNextTimeOpen(venueTimeObject, currentTime){
+  var openTimeToday = openTime(venueTimeObject, today);
+  var openTimeTomorrow = openTime(venueTimeObject, (today + 1));
+  if (currentTime > setTimeInMinutes(openTimeToday)){
+    var timeUntilTomorrow = 1400 - rightNow;
+    var timeOpenTomorrow = setTimeInMinutes(openTimeTomorrow);
+    return timeUntilTomorrow + timeOpenTomorrow;
+  } else {
+    var openingTimeInMinutes = setTimeInMinutes(openTimeToday);
+    debugger;
+    return openingTimeInMinutes - currentTime;
   }
 }
 
@@ -113,7 +123,7 @@ function renderVenue(venueIdentifier, status, timeToChange){
     var minutesToChange = timeToChange;
   }
   if (status === 'open') {
-    appendTimePanel(venueIdentifier, hoursToChange, minutesToChange, 'time-to-close');
+    appendTimePanel(venueIdentifier, hoursToChange, minutesToChange, 'time-to-open');
     appendTimeStatusText(venueIdentifier, hoursToChange, minutesToChange, "Closing");
   } else if (status === 'closed') {
     appendTimePanel(venueIdentifier, hoursToChange, minutesToChange, 'time-to-close');
